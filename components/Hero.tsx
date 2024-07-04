@@ -23,32 +23,44 @@ const Hero = () => {
         {/* Radial gradient for the container to give a faded look */}
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
-      <div className="flex justify-center relative my-20  z-10 ">
+      <div className="flex justify-center relative z-10 mb-20">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <div className="rounded-full group px-4 py-[6px] text-sm font-[500] flex justify-center relative bg-black items-center cursor-pointer">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 via-pink-500 to-violet-500 rounded-full blur opacity-75 -z-20 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-            <span className="text-sm">🎉</span>
-            <div
-              data-orientation="vertical"
-              role="none"
-              className="shrink-0 bg-border w-px mx-2 h-4"
-            />
-            <span className="flex justify-center items-center gap-2 font-[400] tracking-wide text-[13px] text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-yellow-500 to-pink-500">
-              Introducing Portfolio
-              <span className="rotate-[42deg] group-hover:rotate-0 transition-all ">
-                <CiLocationArrow1 className="rotate-10 group-hover:rotate-0 font-black text-md text-neutral-500" />
+          <div>
+            <div className="rounded-full group px-4 py-[6px] text-sm font-[500] flex justify-center relative bg-black items-center cursor-pointer">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 via-pink-500 to-violet-500 rounded-full blur opacity-75 -z-20 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+              <span className="text-sm">🎉</span>
+              <div
+                data-orientation="vertical"
+                role="none"
+                className="shrink-0 bg-border w-px mx-2 h-4"
+              />
+              <span className="flex justify-center items-center gap-2 font-[400] tracking-wide text-[13px] text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-yellow-500 to-pink-500">
+                Introducing Portfolio
+                <span className="rotate-[42deg] group-hover:rotate-0 transition-all ">
+                  <CiLocationArrow1 className="rotate-10 group-hover:rotate-0 font-black text-md text-neutral-500" />
+                </span>
               </span>
-            </span>
+            </div>
+            <h2 className="uppercase tracking-widest text-center text-blue-100 max-w-80 text-xs mt-8 mb-16">
+              Dynamic Web Magic with Next.JS
+            </h2>
           </div>
-          <h2 className="uppercase tracking-widest text-center text-blue-100 max-w-80 text-xs mt-20">
-            Dynamic Web Magic with Next.JS
-          </h2>
+
           <TextGenerateEffect
-            className="text-center text-[40px] md:text-5xl lg:text-6xl "
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
             words="Transforming Concepts into seamless User Experiences."
           />
           <p className="text-center mb-4 tracking-wider text-sm md:text-lg lg:text-2xl">
-            Hi, I&apos;m Aman Kushwaha, a Next.js developer based in India
+            Hi, I&apos;m{" "}
+            <span className="font-[600] bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-yellow-600 text-3xl">
+              Aman Kushwaha,
+            </span>{" "}
+            a{" "}
+            <span className="stroke text-cyan-500 uppercase underline">
+              Next.js
+            </span>{" "}
+            {""}
+            developer based in India
           </p>
           <Link href={"#work"}>
             <MagicButton
