@@ -1,6 +1,6 @@
 import { cn } from "@/utils/cn";
-import Image from "next/image";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
+import { GlobeDemo } from "./GridGlobe";
 
 export const BentoGrid = ({
   className,
@@ -109,6 +109,33 @@ export const BentoGridItem = ({
           >
             {title}
           </div>
+          {id === 2 && <GlobeDemo />}
+          {id === 3 && (
+            <div className="flex gap-1 lg:gap-5 w-fit top-7 absolute -right-3 z-30">
+              <div className="flex flex-col gap-3 lg:gap-5">
+                {["Next.js", "React.js", "Tailwind CSS"].map((item, idx) => (
+                  <span
+                    key={idx}
+                    className="py-2 lg:py-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
+              </div>
+              <div className="flex flex-col gap-3 lg:gap-5">
+                <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
+                {["Vue.js", "ReactQuery", "MongoDB"].map((item, idx) => (
+                  <span
+                    key={idx}
+                    className="py-2 lg:py-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
