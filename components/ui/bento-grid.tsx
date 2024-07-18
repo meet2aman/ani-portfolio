@@ -1,6 +1,13 @@
+"use client";
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import { GlobeDemo } from "./GridGlobe";
+import { useState } from "react";
+import Lottie from "react-lottie";
+import animationData from "@/data/confetti.json";
+import MagicButton from "./MagicButton";
+import { IoCopyOutline } from "react-icons/io5";
+import { LuCopyCheck } from "react-icons/lu";
 
 export const BentoGrid = ({
   className,
@@ -44,6 +51,21 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText("meet2amankushwaha@gmail.com");
+    setCopied(true);
+  };
+
+  const defaultOptions = {
+    loop: copied,
+    autoplay: copied,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div
       className={cn(
@@ -90,7 +112,7 @@ export const BentoGridItem = ({
         </div>
 
         {id === 6 && (
-          <BackgroundGradientAnimation className="w-full">
+          <BackgroundGradientAnimation className="w-full h-full">
             <div className="absolute top-0 left-0 overflow-hidden z-50 flex items-center justify-center text-white font-bold" />
           </BackgroundGradientAnimation>
         )}
@@ -125,7 +147,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3 lg:gap-5">
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]" />
-                {["Vue.js", "ReactQuery", "MongoDB"].map((item, idx) => (
+                {["Node.js", "ReactQuery", "MongoDB"].map((item, idx) => (
                   <span
                     key={idx}
                     className="py-2 lg:py-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
@@ -134,6 +156,20 @@ export const BentoGridItem = ({
                   </span>
                 ))}
               </div>
+            </div>
+          )}
+          {id === 6 && (
+            <div className="mt-5 relative">
+              <div className={`absolute -bottom-5 right-0`}>
+                <Lottie options={defaultOptions} />
+              </div>
+              <MagicButton
+                title={copied ? "Email is Copied " : "Copy my Email "}
+                icon={copied ? <LuCopyCheck /> : <IoCopyOutline />}
+                position={"left"}
+                otherClasses="!bg-[#161a31]"
+                handleClick={handleCopy}
+              />
             </div>
           )}
         </div>
