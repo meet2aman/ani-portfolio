@@ -1,5 +1,8 @@
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
+import Skills from "@/components/Skills";
+import TechStack from "@/components/TechStack";
+
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data";
 
@@ -13,6 +16,8 @@ export default function Home() {
         />
         <Hero />
         <Grid />
+        <Skills />
+        <TechStack />
       </div>
     </main>
   );
